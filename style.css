@@ -141,19 +141,18 @@ header {
 .nav-links {
     position: absolute;
     top: calc(100% + 15px);
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px);
+    right: 0; /* Align to right of menu button */
     background: rgba(15, 15, 18, 0.95);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 15px;
-    padding: 1rem;
+    padding: 0.5rem;
     list-style: none;
     display: none;
     flex-direction: column;
-    gap: 0.5rem;
-    min-width: 200px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    gap: 0.2rem;
+    min-width: 150px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -161,19 +160,19 @@ header {
 .nav-links.active {
     display: flex;
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .nav-links li a {
     color: #a0a0a0;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1rem;
     display: block;
     border-radius: 8px;
     transition: all 0.3s;
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .nav-links li a:hover {

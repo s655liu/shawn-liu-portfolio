@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "hero-contact-me": "Contact Me",
             "hero-location": "Vancouver, BC, Canada",
             "about-title": "About Me",
-            "exp-title": "Experience",
+            "exp-title": "Experiences",
             "exp-date-1": "Sept. 2020",
             "exp-title-1": "Computer Science at University of Waterloo",
             "exp-org-1": "University of Waterloo",
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-copy": "Built with Passion & Caffeine.",
             "hero-resume": "Resume",
             "nav-menu": "Menu",
-            "nav-exp": "Experience"
+            "nav-exp": "Experiences"
         },
         cn: {
             "nav-home": "首页", "nav-about": "关于", "nav-projects": "项目", "nav-skills": "技能", "nav-contact": "联系", "nav-resume": "简历",
@@ -116,6 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-exp": "经历"
         }
     };
+
+    let currentLang = "en";
 
     // Status Pill Rotation
     const statusSpan = document.getElementById('status-text');
