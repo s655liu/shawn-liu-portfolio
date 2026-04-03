@@ -87,65 +87,136 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.5rem 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10, 10, 12, 0.8);
-    backdrop-filter: blur(10px);
     z-index: 1000;
+    padding: 1rem 0;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
 }
 
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: bold;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav-logo a {
+    font-size: 1.8rem;
+    font-weight: 800;
     color: var(--primary-color);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    align-items: center;
-}
-
-nav ul li {
-    display: flex;
-    align-items: center;
-}
-
-nav ul li a {
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: color 0.3s;
-    font-size: 0.95rem;
+    letter-spacing: 2px;
 }
 
-nav ul li a:hover {
-    color: var(--primary-color);
+/* Condensed Menu Dropdown */
+.nav-menu {
+    position: relative;
 }
 
-.lang-btn {
+.menu-btn {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--glass-border);
     color: var(--text-color);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
     cursor: pointer;
-    font-family: inherit;
-    font-size: 0.85rem;
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     transition: all 0.3s;
-    margin-left: 1rem;
-    backdrop-filter: blur(5px);
+    font-family: inherit;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+}
+
+.nav-links {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: rgba(15, 15, 18, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 1rem;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 200px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-links li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    padding: 0;
 }
 
 .lang-btn:hover {
-    background: rgba(100, 255, 218, 0.1);
-    border-color: var(--primary-color);
     color: var(--primary-color);
+}
+
+.nav-resume {
+    background: transparent;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.nav-resume:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
 }
 
 .hero {
