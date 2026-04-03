@@ -353,6 +353,7 @@ header {
     gap: 10px;
     font-size: 0.95rem;
     color: #e0e0e6;
+    min-width: 440px; /* Constant width to prevent jumping */
 }
 
 .learning-pill .dot {

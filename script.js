@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusSpan = document.getElementById('status-text');
     const statusPhrases = {
         en: ["Learning AI Agents && LLM Fine-tuning", "Hope to travel to China in 2027", "Running around"],
-        cn: ["正在学习 AI Agents && 大模型微调", "望 2027 年去中国旅游", "正在跑步"]
+        cn: ["正在学习 AI Agents && 大模型微调", "望 2027 年去中国旅游", "跑步中"]
     };
     let statusIndex = 0;
 
