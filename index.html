@@ -35,42 +35,49 @@
                 <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
                 <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
                 <li><button id="lang-toggle" class="lang-btn">EN / 中</button></li>
-                <li><a href="Shawn_Liu_Resume.pdf" target="_blank" class="nav-resume" data-i18n="nav-resume">Resume</a></li>
+                <li><a href="Files/Shawn_Liu_Resume.pdf" target="_blank" class="nav-resume"
+                        data-i18n="nav-resume">Resume</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero" class="hero">
+            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 data-i18n="hero-greeting">Hey, I'm Shawn</h1>
-                    <p class="hero-description" data-i18n="hero-desc">Welcome to my website! I'm a dedicated full stack
-                        developer with a focus
-                        on creating exceptional digital experiences that are robust, accessible, responsive. I have been
-                        creating enterprise-level web applications for 2 years and strive to explore new ways of
-                        bringing creative digital solutions to life.</p>
+                    <span class="hero-mini-title" data-i18n="hero-hi">HI, I'M</span>
+                    <h1 class="hero-name" data-i18n="hero-name">Shawn Liu</h1>
 
-                    <div class="hero-meta">
-                        <div class="location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span data-i18n="hero-location">Vancouver, BC, Canada</span>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://github.com/s655liu" target="_blank" title="GitHub"><i
-                                    class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/shawn-liu-399448170/" target="_blank"
-                                title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        </div>
+                    <div class="hero-typing-container">
+                        <span data-i18n="hero-im-a">I'm a</span> <span id="typing-text" class="typing-text"></span><span
+                            class="cursor">|</span>
                     </div>
-                    <div class="cta" style="margin-top: 1rem;">
-                        <a href="#contact" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;"
-                            data-i18n="hero-cta">Get
-                            in Touch</a>
+
+                    <div class="learning-pill">
+                        <span class="dot"></span>
+                        <span data-i18n="hero-learning">Learning: AI Agents & LLM Fine-tuning</span>
+                    </div>
+
+                    <div class="cta" style="margin-top: 2rem; display: flex; gap: 1.5rem;">
+                        <a href="#projects" class="btn btn-view" data-i18n="hero-view-proj">View Projects <i
+                                class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-contact" data-i18n="hero-contact-me">Contact Me <i
+                                class="fas fa-play"></i></a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/s655liu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shawn-liu-399448170/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="mailto:s314liu@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="img/Me in Xi'an.png" alt="Shawn Liu" class="profile-img">
+                    <div class="profile-container">
+                        <img src="Images/Me in Xi'an.png" alt="Shawn Liu" class="profile-img-circular">
+                    </div>
                 </div>
             </div>
         </section>
@@ -101,6 +108,58 @@
                     <p data-i18n="proj-desc">I'm currently curating my latest work for display. Stay tuned for updates
                         on my recent full-stack
                         and systems engineering projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience reveal">
+            <div class="container">
+                <h2 class="section-title" data-i18n="exp-title">Experience</h2>
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-container">
+                        <!-- Milestone 1: Waterloo -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot waterloo-dot">
+                                <img src="Images/uwaterloo-logo.jpg" alt="Waterloo" class="timeline-img">
+                            </div>
+                            <div class="timeline-card waterloo-card">
+                                <span class="timeline-date" data-i18n="exp-date-1">Sept. 2020</span>
+                                <h3 data-i18n="exp-title-1">Computer Science at Unviersity of Waterloo!</h3>
+                                <h4 data-i18n="exp-org-1">University of Waterloo</h4>
+                                <p data-i18n="exp-desc-1">Started my Computer Science degree at the University of
+                                    Waterloo in the middle of the Covid pandemic 😷.</p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 2: Various Internships -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot ford-dot">
+                                <img src="Images/iqvia-logo.jpg" alt="IQVIA" class="timeline-img">
+                            </div>
+                            <div class="timeline-card ford-card">
+                                <span class="timeline-date" data-i18n="exp-date-2">Aug. 2021 - Dec. 2021</span>
+                                <h3 data-i18n="exp-title-2">Data Scientist Intern</h3>
+                                <h4 data-i18n="exp-org-2">IQVIA</h4>
+                                <p data-i18n="exp-desc-2">Wrote scripts for automating and improving software
+                                    performance.</p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 3: Fortinet -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot fortinet-dot">
+                                <img src="Images/fortinet-logo.png" alt="Fortinet" class="timeline-img">
+                            </div>
+                            <div class="timeline-card fortinet-card">
+                                <span class="timeline-date" data-i18n="exp-date-3">Oct. 2025 - Present</span>
+                                <h3 data-i18n="exp-title-3">Full Stack Web Developer</h3>
+                                <h4 data-i18n="exp-org-3">Fortinet</h4>
+                                <p data-i18n="exp-desc-3">Building AI Agents for security solutions and high-performance
+                                    full-stack web applications.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -140,14 +199,14 @@
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <span id="email">s314liu@gmail.com</span>
-                        <button class="copy-btn" onclick="copyToClipboard('s655liu@uwaterloo.ca', this)"
+                        <button class="copy-btn" onclick="copyToClipboard('s314liu@gmail.com', this)"
                             title="Copy Email">
                             <i class="far fa-copy"></i>
                         </button>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span id="phone">+1 778-939-2233</span>
+                        <span id="phone">+1 (778)-939-2233</span>
                         <button class="copy-btn" onclick="copyToClipboard('+1 778-939-2233', this)" title="Copy Phone">
                             <i class="far fa-copy"></i>
                         </button>
