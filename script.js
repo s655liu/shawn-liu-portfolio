@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    let currentLang = localStorage.getItem("lang") || "en";
+    let currentLang = "en";
 
     function updateLanguage(lang) {
         document.querySelectorAll("[data-i18n]").forEach(el => {
