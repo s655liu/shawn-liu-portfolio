@@ -33,9 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Console message
-    console.log("%cHello! Thanks for checking out my portfolio. - Shawn", "color: #64ffda; font-size: 1.2rem; font-weight: bold;");
-
     // Multi-language system
     const translations = {
         en: {
