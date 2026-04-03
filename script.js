@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-desc": "What's next? Feel free to reach out to me if you're looking for a developer or simply want to connect.",
             "footer-btn": "Say Hello",
             "footer-copy": "Built with Passion & Caffeine.",
-            "hero-resume": "Resume"
+            "hero-resume": "Resume",
+            "nav-menu": "Menu",
+            "nav-exp": "Experience"
         },
         cn: {
             "nav-home": "首页", "nav-about": "关于", "nav-projects": "项目", "nav-skills": "技能", "nav-contact": "联系", "nav-resume": "简历",
@@ -109,20 +111,50 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-desc": "期待与您的交流！如果您正在寻找开发人员或只是想打个招呼，欢迎随时联系我。",
             "footer-btn": "打个招呼",
             "footer-copy": "用热爱与咖啡构建。",
-            "hero-resume": "简历"
+            "hero-resume": "简历",
+            "nav-menu": "菜单",
+            "nav-exp": "经历"
         }
     };
 
-    let currentLang = "en";
+    // Status Pill Rotation
+    const statusSpan = document.getElementById('status-text');
+    const statusPhrases = {
+        en: ["Learning AI Agents && LLM Fine-tuning", "Hope to travel to China in 2027", "Running around"],
+        cn: ["正在学习 AI Agents && 大模型微调", "望 2027 年去中国旅游", "正在跑步"]
+    };
+    let statusIndex = 0;
+
+    function updateStatusText() {
+        if (!statusSpan) return;
+        statusSpan.textContent = statusPhrases[currentLang][statusIndex];
+    }
+
+    function rotateStatus() {
+        if (!statusSpan) return;
+        statusSpan.style.opacity = 0;
+        setTimeout(() => {
+            statusIndex = (statusIndex + 1) % statusPhrases[currentLang].length;
+            updateStatusText();
+            statusSpan.style.opacity = 1;
+        }, 500);
+    }
+
+    if (statusSpan) {
+        statusSpan.style.transition = "opacity 0.5s ease-in-out";
+        updateStatusText(); // Initial set
+        setInterval(rotateStatus, 4000);
+    }
 
     function updateLanguage(lang) {
+        currentLang = lang; // Set this early so status updates correctly
         document.querySelectorAll("[data-i18n]").forEach(el => {
             const key = el.getAttribute("data-i18n");
             if (translations[lang][key]) {
                 el.innerHTML = translations[lang][key];
             }
         });
-        
+
         // Update hrefs
         document.querySelectorAll("[data-i18n-href]").forEach(el => {
             const key = el.getAttribute("data-i18n-href");
@@ -131,8 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Update status pill text immediately on language change
+        updateStatusText();
+
         localStorage.setItem("lang", lang);
-        currentLang = lang;
         document.documentElement.lang = lang;
     }
 
@@ -143,6 +177,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextLang = currentLang === "en" ? "cn" : "en";
         updateLanguage(nextLang);
     });
+
+    // Menu Toggle Logic
+    const menuBtn = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            menuBtn.querySelector('i').classList.toggle('fa-chevron-up');
+            menuBtn.querySelector('i').classList.toggle('fa-chevron-down');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.querySelector('i').classList.remove('fa-chevron-up');
+            menuBtn.querySelector('i').classList.add('fa-chevron-down');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-chevron-up');
+                menuBtn.querySelector('i').classList.add('fa-chevron-down');
+            });
+        });
+    }
 
     // Typing Animation
     const typingSpan = document.getElementById('typing-text');
