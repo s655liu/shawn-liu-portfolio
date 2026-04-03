@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         cn: {
             "nav-home": "首页", "nav-about": "关于", "nav-projects": "项目", "nav-skills": "技能", "nav-contact": "联系",
-            "hero-greeting": "你好，我是 Shawn",
+            "hero-greeting": "你好，我是刘上达",
             "hero-desc": "欢迎来到我的网站！我是一名专注于打造卓越数字体验的全栈开发人员。两年来，我一直致力于开发企业级 Web 应用程序，并不断探索创新的数字解决方案。",
             "hero-location": "加拿大 温哥华",
             "hero-cta": "取得联系",
             "about-title": "关于我",
-            "about-p1": "你好！我是 Shawn，目前在 <strong>Fortinet</strong> 担任全栈 Web 开发人员，2025 年毕业于<strong>滑铁卢大学</strong>，获得计算机科学荣誉学士学位。我擅长构建可扩展的 Web 应用程序和高性能系统。",
+            "about-p1": "你好！我是刘上达，目前在 <strong>Fortinet</strong> 担任全栈 Web 开发人员，2025 年毕业于<strong>滑铁卢大学</strong>，获得计算机科学荣誉学士学位。我擅长构建可扩展的 Web 应用程序和高性能系统。",
             "about-p2": "我拥有扎实的系统编程（C++）和现代 Web 框架（React，Python）基础，喜欢解决全栈领域的复杂问题。我一直在寻找新的挑战和成长为优秀工程师的机会。",
             "about-p3": "在闲暇时间，我喜欢拉小提琴、阅读中国历史以及跑步。",
             "proj-title": "项目展示",
@@ -102,3 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLanguage(nextLang);
     });
 });
+
+function copyToClipboard(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+        const icon = btn.querySelector('i');
+        icon.className = 'fas fa-check';
+        btn.style.color = '#64ffda';
+
+        setTimeout(() => {
+            icon.className = 'far fa-copy';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
