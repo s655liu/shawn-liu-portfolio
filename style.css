@@ -99,43 +99,96 @@ nav ul li a:hover {
 .hero {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: 0 10%;
-    background: linear-gradient(rgba(10, 10, 12, 0.7), rgba(10, 10, 12, 0.7)), url('img/hero-bg.png');
-    background-size: cover;
-    background-position: center;
+    margin-top: 4rem;
 }
 
-.hero h1 {
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-text h1 {
     font-family: var(--font-heading);
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s forwards;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
-.hero p {
+.hero-description {
     font-size: 1.25rem;
-    max-width: 600px;
+    line-height: 1.8;
     color: #a0a0a0;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s 0.3s forwards;
+    max-width: 700px;
 }
 
-.cta {
-    margin-top: 2rem;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s 0.6s forwards;
+.hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    color: #888;
+}
+
+.location i {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 350px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 10rem;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
 }
 
 .btn {
@@ -220,24 +273,92 @@ section {
 
 /* Skills */
 .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+}
+
+.skill-item {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+}
+
+.skill-item i {
+    font-size: 3rem;
+}
+
+.skill-item span {
+    font-weight: 500;
+    color: #a0a0a0;
+}
+
+/* Footer & Contact */
+footer {
+    padding: 6rem 10% 3rem 10%;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
 }
 
-.skill-tag {
-    background: var(--glass-bg);
+.contact-pill {
+    background: #2d3436;
+    color: #dfe6e9;
     padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
-    font-weight: 500;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
-/* Footer */
-footer {
-    padding: 2rem 10%;
-    text-align: center;
-    border-top: 1px solid var(--glass-border);
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.contact-item i:first-child {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
     color: #666;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.copy-btn:hover {
+    color: var(--primary-color);
+    background: rgba(100, 255, 218, 0.1);
 }

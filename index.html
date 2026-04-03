@@ -12,6 +12,10 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Orbitron:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Devicon for Skill Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- FontAwesome for UI Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -25,31 +29,66 @@
         <div class="logo">SL.</div>
         <nav>
             <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero" data-i18n="nav-home">Home</a></li>
+                <li><a href="#about" data-i18n="nav-about">About</a></li>
+                <li><a href="#projects" data-i18n="nav-projects">Projects</a></li>
+                <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+                <li><button id="lang-toggle" class="lang-btn">EN / 中</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero" class="hero">
-            <h1>Shawn Liu</h1>
-            <p>Full Stack Web Developer at Fortinet. Graduated from University of Waterloo Honours Computer Science in
-                2025. Passionate about building
-                high-performance systems and beautiful user experiences.</p>
-            <div class="cta">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 data-i18n="hero-greeting">Hey, I'm Shawn</h1>
+                    <p class="hero-description" data-i18n="hero-desc">Welcome to my website! I'm a dedicated full stack
+                        developer with a focus
+                        on creating exceptional digital experiences that are robust, accessible, responsive. I have been
+                        creating enterprise-level web applications for 2 years and strive to explore new ways of
+                        bringing creative digital solutions to life.</p>
+
+                    <div class="hero-meta">
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="hero-location">Vancouver, BC, Canada</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/s655liu" target="_blank" title="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/s655liu" target="_blank" title="LinkedIn"><i
+                                    class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="cta" style="margin-top: 1rem;">
+                        <a href="#contact" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;"
+                            data-i18n="hero-cta">Get
+                            in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- User should replace this with their actual photo -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="about" class="reveal">
             <h2 class="section-title">About Me</h2>
             <div class="glass-card">
-                <p>Hello! I'm Shawn, a <strong>Full Stack Web Developer at Fortinet</strong> and a 2025 Honors Computer Science graduate from the <strong>University of Waterloo</strong>. I specialize in building scalable web applications and high-performance systems.</p>
-                <p style="margin-top: 1rem;">With a foundation in both low-level systems programming (C++) and modern web frameworks (React, Python), I enjoy solving complex problems across the entire stack. I'm always looking for new challenges and opportunities to learn and grow as an engineer.</p>
+                <p>Hello! I'm Shawn, a <strong>Full Stack Web Developer at Fortinet</strong> and a 2025 Honors Computer
+                    Science graduate from the <strong>University of Waterloo</strong>. I specialize in building scalable
+                    web applications and high-performance systems.</p>
+                <p style="margin-top: 1rem;">With a foundation in both low-level systems programming (C++) and modern
+                    web frameworks (React, Python), I enjoy solving complex problems across the entire stack. I'm always
+                    looking for new challenges and opportunities to learn and grow as an engineer.
+                </p>
+                <p style="margin-top: 1rem;">In my free time I like to play the violin, read Chinese history, and go out
+                    for a run.</p>
             </div>
         </section>
 
@@ -58,44 +97,66 @@
             <div class="projects-grid">
                 <div class="glass-card project-card" style="text-align: center; grid-column: 1 / -1;">
                     <h3>Projects Coming Soon</h3>
-                    <p>I'm currently curating my latest work for display. Stay tuned for updates on my recent full-stack and systems engineering projects.</p>
+                    <p>I'm currently curating my latest work for display. Stay tuned for updates on my recent full-stack
+                        and systems engineering projects.</p>
                 </div>
             </div>
         </section>
 
         <section id="skills" class="reveal">
-            <h2 class="section-title">Technical Expertise</h2>
+            <h2 class="section-title">Skills</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #a0a0a0;">The tools and technologies I'm really
+                good at:</p>
             <div class="skills-grid">
-                <div class="skill-tag">C/C++</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">Go</div>
-                <div class="skill-tag">JavaScript (ES6+)</div>
-                <div class="skill-tag">React / Redux</div>
-                <div class="skill-tag">TypeScript</div>
-                <div class="skill-tag">Node.js</div>
-                <div class="skill-tag">RESTful APIs</div>
-                <div class="skill-tag">Docker & Kubernetes</div>
-                <div class="skill-tag">SQL & NoSQL</div>
-                <div class="skill-tag">System Security</div>
+                <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>Javascript</span></div>
+                <div class="skill-item"><i class="devicon-typescript-plain colored"></i><span>Typescript</span></div>
+                <div class="skill-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+                <div class="skill-item"><i class="devicon-c-plain colored"></i><span>C</span></div>
+                <div class="skill-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+                <div class="skill-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+                <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                <div class="skill-item"><i class="devicon-pytorch-original colored"></i><span>PyTorch</span></div>
+                <div class="skill-item"><i class="devicon-go-original-wordmark colored"></i><span>Golang</span></div>
+                <div class="skill-item"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+                <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>SQL</span></div>
+                <div class="skill-item"><i class="devicon-dotnetcore-plain colored"></i><span>ASP.NET</span></div>
+                <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+                <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+                <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
             </div>
         </section>
 
-        <section id="contact" class="reveal">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="glass-card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-                <p>I'm currently looking for new opportunities! Whether you have a question or just want to say hi, my
-                    inbox is always open.</p>
-                <p style="margin: 1.5rem 0; font-weight: bold; color: var(--primary-color);">s655liu@uwaterloo.ca</p>
-                <a href="mailto:s655liu@uwaterloo.ca" class="btn btn-primary">Say Hello</a>
+        <footer id="contact">
+            <div class="footer-contact reveal">
+                <div class="contact-pill" data-i18n="footer-pill">Get in touch</div>
+                <p><span data-i18n="footer-desc">What's next? Feel free to reach out to me if you're looking for a
+                        developer or simply want to
+                        connect.</span></p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span id="email">s314liu@gmail.com</span>
+                        <button class="copy-btn" onclick="copyToClipboard('s655liu@uwaterloo.ca', this)"
+                            title="Copy Email">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span id="phone">+1 778-939-2233</span>
+                        <button class="copy-btn" onclick="copyToClipboard('+1 778-939-2233', this)" title="Copy Phone">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <a href="mailto:s655liu@uwaterloo.ca" class="btn btn-primary" style="margin-top: 1rem;">Say Hello</a>
             </div>
-        </section>
-    </main>
+            <p style="margin-top: 4rem; opacity: 0.5;">&copy; 2026 Shawn Liu. Built with Passion & Caffeine.</p>
+        </footer>
 
-    <footer>
-        <p>&copy; 2026 Shawn Liu. Built with Passion & Caffeine.</p>
-    </footer>
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
