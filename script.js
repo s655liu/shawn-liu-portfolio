@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealOnScroll(); // Initial check
 
     // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
@@ -53,7 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-pill": "Get in touch",
             "footer-desc": "What's next? Feel free to reach out to me if you're looking for a developer or simply want to connect.",
             "footer-btn": "Say Hello",
-            "footer-copy": "Built with Passion & Caffeine."
+            "footer-copy": "Built with Passion & Caffeine.",
+            "nav-resume": "Resume",
+            "hero-resume": "Resume"
         },
         cn: {
             "nav-home": "首页", "nav-about": "关于", "nav-projects": "项目", "nav-skills": "技能", "nav-contact": "联系",
@@ -73,7 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-pill": "取得联系",
             "footer-desc": "期待与您的交流！如果您正在寻找开发人员或只是想打个招呼，欢迎随时联系我。",
             "footer-btn": "打个招呼",
-            "footer-copy": "用热爱与咖啡构建。"
+            "footer-copy": "用热爱与咖啡构建。",
+            "nav-resume": "简历",
+            "hero-resume": "简历"
         }
     };
 
