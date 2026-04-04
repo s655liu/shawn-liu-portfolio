@@ -1,0 +1,151 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0c;
+}
+
+/* Animated Background Layer */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Images/hero-cinematic-bg.png') no-repeat center center/cover;
+    animation: hero-ken-burns 30s ease-in-out infinite alternate;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+@keyframes hero-ken-burns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15) translate(-1%, -1%); }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(10, 10, 12, 0.9) 0%, rgba(10, 10, 12, 0.4) 60%, transparent 100%);
+    z-index: 2;
+}
+
+/* Floating Particles Overlay */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, #fff 1.5px, transparent 1.5px),
+        radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px;
+    background-position: 0 0, 50px 50px;
+    opacity: 0.15;
+    z-index: 3;
+    animation: particles-float 25s linear infinite;
+}
+
+@keyframes particles-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-300px); }
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-mini-title {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #a0a0a0;
+    font-weight: 600;
+}
+
+.hero-name {
+    font-family: var(--font-heading);
+    font-size: 5.5rem;
+    margin: 0.5rem 0;
+    color: #fff;
+    letter-spacing: -2px;
+}
+
+.hero-typing-container {
+    font-size: 1.8rem;
+    color: #e0e0e6;
+    margin-bottom: 2rem;
+}
+
+.typing-text {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.cursor {
+    color: var(--primary-color);
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.learning-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #e0e0e6;
+    min-width: 440px;
+}
+
+.learning-pill .dot {
+    width: 8px;
+    height: 8px;
+    background: #f9ca24;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #f9ca24;
+}
+
+.hero-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.hero-socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    opacity: 0.7;
+}
+
+.hero-socials a:hover {
+    color: var(--primary-color);
+    opacity: 1;
+    transform: translateY(-3px);
+}
