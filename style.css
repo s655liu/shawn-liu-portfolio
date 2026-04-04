@@ -301,7 +301,7 @@ header {
     max-width: 1200px;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 10; /* Ensure links are clickable above particles/overlay */
 }
 
 .hero-mini-title {
@@ -449,6 +449,11 @@ header {
     display: inline-block;
 }
 
+.btn-small {
+    padding: 0.5rem 1.4rem;
+    font-size: 0.9rem;
+}
+
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--bg-color);
@@ -502,17 +507,35 @@ header {
     left: 50%;
     width: 3px;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    /* Solid transition to dotted */
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.1) 94%, 
+        transparent 94%);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
     transform: translateX(-50%);
     z-index: 1;
+}
+
+.timeline-line::after {
+    content: '';
+    position: absolute;
+    top: 94%;
+    left: 0;
+    width: 100%;
+    height: 5rem; /* Shorter line to avoid extending into skills */
+    background-image: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.1) 40%, 
+        transparent 40%
+    );
+    background-size: 3px 12px;
 }
 
 .timeline-container {
     display: flex;
     flex-direction: column;
     position: relative;
-    gap: 6rem;
+    gap: 12rem; /* Increased from 6rem for more breathing room */
 }
 
 .timeline-item {
@@ -545,52 +568,108 @@ header {
     border-radius: 50%;
 }
 
-.waterloo-dot {
-    border-color: #f9ca24;
-    color: #f9ca24;
-    box-shadow: 0 0 20px rgba(249, 202, 36, 0.3);
+.waterloo-dot { border-color: #f9ca24; box-shadow: 0 0 20px rgba(249, 202, 36, 0.3); }
+.iqvia-dot    { border-color: #21336c; box-shadow: 0 0 20px rgba(33, 51, 108, 0.3); }
+.nokia-dot    { border-color: #124191; box-shadow: 0 0 20px rgba(18, 65, 145, 0.3); }
+.spark-dot    { border-color: #ff9f43; box-shadow: 0 0 20px rgba(255, 159, 67, 0.3); background: #333; }
+.wuxi-dot     { border-color: #1abc9c; box-shadow: 0 0 20px rgba(26, 188, 156, 0.3); }
+.bosda-dot    { border-color: #0984e3; box-shadow: 0 0 20px rgba(9, 132, 227, 0.3); }
+.fortinet-dot { border-color: #ed2127; box-shadow: 0 0 20px rgba(237, 33, 39, 0.3); }
+
+.more-indicator {
+    padding: 2rem 0; /* Adjusted spacing */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
 }
 
-.ford-dot {
-    border-color: #21336c;
-    color: #5dade2;
-    box-shadow: 0 0 20px rgba(11, 31, 92, 0.3);
+.more-text {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    
+    /* Subtle Box */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background: #0a0a0c; /* OPAQUE to mask the line */
+    z-index: 10;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.fortinet-dot {
-    border-color: #ed2127;
-    color: #ed2127;
-    box-shadow: 0 0 20px rgba(237, 33, 39, 0.3);
+.more-text:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e0e0e6;
+}
+
+.placeholder-icon {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff9f43;
 }
 
 .timeline-card {
     background: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 1.8rem;
     width: 450px;
     max-width: calc(50% - 100px);
     position: absolute;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
     z-index: 5;
     text-align: left;
 }
 
+.timeline-card .timeline-date {
+    color: #888;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-card h3 {
+    color: #1a1a1c;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.timeline-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.timeline-card p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 /* Alternating Sides */
 .timeline-item:nth-child(odd) .timeline-card {
     right: calc(50% + 70px);
-    border-right: 6px solid #f9ca24;
 }
 
 .timeline-item:nth-child(even) .timeline-card {
     left: calc(50% + 70px);
-    border-left: 6px solid #21336c;
 }
 
-/* Specific colors for milestones */
-.timeline-item:nth-child(3) .timeline-card {
-    border-right: 6px solid #ed2127;
-}
+/* Border Accent Colors */
+.timeline-item:nth-child(1) .timeline-card { border-right: 6px solid #f9ca24; }
+.timeline-item:nth-child(2) .timeline-card { border-left: 6px solid #21336c; }
+.timeline-item:nth-child(3) .timeline-card { border-right: 6px solid #124191; }
+.timeline-item:nth-child(4) .timeline-card { border-left: 6px solid #ff9f43; }
+.timeline-item:nth-child(5) .timeline-card { border-right: 6px solid #1abc9c; }
+.timeline-item:nth-child(6) .timeline-card { border-left: 6px solid #0984e3; }
+.timeline-item:nth-child(7) .timeline-card { border-right: 6px solid #ed2127; }
 
 /* Arrows */
 .timeline-card::after {
