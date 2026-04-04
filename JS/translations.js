@@ -58,7 +58,7 @@ window.translations = {
         "exp-more": "... and may there be more to come"
     },
     cn: {
-        "nav-home": "首页", "nav-about": "关于", "nav-projects": "项目", "nav-skills": "技能", "nav-contact": "联系", "nav-resume": "简历",
+        "nav-home": "首页", "nav-about": "关于", "nav-projects": "项目", "nav-skills": "个人技能", "nav-contact": "联系", "nav-resume": "简历",
         "hero-hi": "你好，我是",
         "hero-name": "刘上达",
         "hero-im-a": "我是一名",
@@ -111,7 +111,7 @@ window.translations = {
         "footer-copy": "用热爱与咖啡构建。",
         "hero-resume": "简历",
         "nav-menu": "菜单",
-        "nav-exp": "经历",
+        "nav-exp": "工作经历",
         "exp-more": "... 待续"
     }
 };
